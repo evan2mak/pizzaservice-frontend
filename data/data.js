@@ -2,20 +2,35 @@
 
 let host = "http://localhost:8080";
 
-let findAllCustomers = () => {
- return fetch(host + '/customers')
-        .then(x => x.json()); 
+let findAllOrders = (customerId) => {
+    return fetch(host + '/orders/' + customerId)
+        .then(x => x.json());
 };
 
-let saveCustomer = (customer) => {
-    return fetch(host + "/customers", {
+let saveOrder = (customerId, orders) => {
+    return fetch(host + "/orders/" + customerId, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            name: customer.name,
-            email: customer.email
+            customerId: orders.customerId,
+            total: orders.total,
+            shippingAddress: {
+                state: orders.shippingAddress.state,
+                city: orders.shippingAddress.city,
+                postalCode: orders.shippingAddress.postalCode,
+            },
+            items: orders.items,
+            payment: {
+                method: orders.payment.method,
+                number: orders.payment.number,
+                billingAddress: {
+                    state: orders.payment.state,
+                    city: orders.payment.city,
+                    postalCode: orders.payment.postalCode,
+                }
+            },
         })
     }).then(response =>
     {
@@ -30,8 +45,8 @@ let saveCustomer = (customer) => {
 }
 
 let data = {
-    customers: findAllCustomers,
-    saveCustomer: saveCustomer
+    orders: findAllOrders,
+    saveOrder: saveOrder
 };
 
 export default data;
