@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <>
         <div className={styles.container}>
-           footer
+           order service @Copyright 2023
         </div>
          
         </>

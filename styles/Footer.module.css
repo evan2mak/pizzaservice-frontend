@@ -1,6 +1,9 @@
 
 .container {
-    display: flex;
+    position: fixed;
+    left: 0;
     bottom: 0;
-    position: absolute;
+    width: 100%;
+    color: black;
+    text-align: right;
 }
