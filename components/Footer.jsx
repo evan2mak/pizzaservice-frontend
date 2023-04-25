@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <>
         <div className={styles.container}>
-           order service @Copyright 2023
+           Pizza Parlor @Copyright 2023
         </div>
          
         </>

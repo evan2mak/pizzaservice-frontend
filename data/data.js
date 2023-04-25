@@ -15,20 +15,31 @@ let saveOrder = (customerId, orders) => {
         },
         body: JSON.stringify({
             customerId: orders.customerId,
-            total: orders.total,
             shippingAddress: {
                 state: orders.shippingAddress.state,
                 city: orders.shippingAddress.city,
                 postalCode: orders.shippingAddress.postalCode,
             },
-            items: orders.items,
+            items: {
+                pepperoni: {
+                    add: orders.items.pepperoni.add,
+                },
+                sausage: {
+                    add: orders.items.sausage.add,
+                },
+                extraCheese: {
+                    add: orders.items.extraCheese.add,
+                },
+                quantity: orders.items.quantity,
+                totalCost: orders.items.totalCost,
+            },
             payment: {
                 method: orders.payment.method,
                 number: orders.payment.number,
                 billingAddress: {
-                    state: orders.payment.state,
-                    city: orders.payment.city,
-                    postalCode: orders.payment.postalCode,
+                    state: orders.payment.billingAddress.state,
+                    city: orders.payment.billingAddress.city,
+                    postalCode: orders.payment.billingAddress.postalCode,
                 }
             },
         })

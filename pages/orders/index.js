@@ -28,7 +28,6 @@ const Orders = () => {
             <thead>
               <tr>
                 <th>Customer ID</th>
-                <th>Total</th>
                 <th>Shipping Address</th>
                 <th>Items</th>
                 <th>Payment</th>
@@ -37,22 +36,26 @@ const Orders = () => {
             <tbody>
             {orders && orders.length > 0 && orders.map((c, i) => (
                 <tr key={i}>
-                  <td data-label="Customer ID">{c.customerId}</td>
-                  <td data-label="Total">{c.total}</td>
+                  <td data-label="Customer ID"><strong>{c.customerId}</strong></td>
                   <td data-label="Shipping Address">
+                    <strong>
                     {c.shippingAddress.state}, {c.shippingAddress.city}, {c.shippingAddress.postalCode}
+                    </strong>
                   </td>
                   <td data-label="Items">
-                    <ul>
-                      {c.items.map((item, j) => (
-                          <li key={j}>
-                            {item.name} ({item.quantity}) - ${item.price}
-                          </li>
-                      ))}
-                    </ul>
+                    {c.items.map((item, i) => (
+                        // eslint-disable-next-line react/jsx-key
+                        <strong>
+                        <div key={i}>
+                          Pepperoni: {item.pepperoni.add ? "Yes" : "No"}, Sausage: {item.sausage.add ? "Yes" : "No"}, Extra Cheese: {item.extraCheese.add ? "Yes" : "No"}, Quantity: {item.quantity}, Total Cost: {item.totalCost}
+                        </div>
+                        </strong>
+                    ))}
                   </td>
                   <td data-label="Payment">
+                  <strong>
                     {c.payment.method} - {c.payment.number} - {c.payment.billingAddress.state}, {c.payment.billingAddress.city}, {c.payment.billingAddress.postalCode}
+                  </strong>
                   </td>
                 </tr>
             ))}

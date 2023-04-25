@@ -6,27 +6,30 @@ const NavBar = () => {
   return (
       <>
       <header>
-        <Link className={styles.logo} href="/">Order Service Homepage</Link>
+        <Link className={styles.logo} href="/">Pizza Parlor Homepage</Link>
 
         <input type="checkbox" id="menu-bar" className={styles.menubar}></input>
-        <label for="menu-bar">menu</label>
+        <label for="menu-bar">Menu</label>
 
         <nav className={styles.navbar}>
         <ul>
           <li>
-            <Link href="/">home</Link>
+            <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/about-us">about</Link>
+            <Link href="/about-us">About</Link>
           </li>
           <li>
-            <Link href="/">orders +</Link>
+            <Link href="/menu">Menu</Link>
+          </li>
+          <li>
+            <Link href="/">Orders +</Link>
             <ul>
               <li>
-                <Link href="/orders">all orders</Link>
+                <Link href="/orders">All Orders</Link>
               </li>
               <li>
-                <Link href="/orders/add">add order</Link>
+                <Link href="/orders/add">Add Order</Link>
               </li>
             </ul>
           </li>

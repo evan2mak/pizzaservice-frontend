@@ -8,7 +8,7 @@ const Layout = ({ children, isHomePage }) => {
             <NavBar />
             {isHomePage && (
                 <div className={styles.container}>
-                    <h2>Welcome to the Order Service!</h2>
+                    <h2>Welcome to Pizza Parlor!</h2>
                 </div>
             )}
             {children}
