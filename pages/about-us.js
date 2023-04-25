@@ -12,6 +12,7 @@ const About = () => {
             <h4> We have been able to utilize Postman to grab customer data, and you can find a customer's order history based on their customer ID number. </h4>
             <h4>We also created a home page with a welcome message, a menu section, and ordering functionality.</h4>
             <h4>As for our architecture style, we evidently chose a service-based architecture.</h4>
+            <h4>As for our design patterns, we implemented the decorator, factory, and adapter design patterns.</h4>
         </div>
     )
 }
