@@ -20,7 +20,15 @@ const NavBar = () => {
             <Link href="/about-us">About</Link>
           </li>
           <li>
-            <Link href="/menu">Menu</Link>
+            <Link href="/">Customers +</Link>
+            <ul>
+              <li>
+                <Link href="/customers">All Customers</Link>
+              </li>
+              <li>
+                <Link href="/customers/add">New Customer</Link>
+              </li>
+            </ul>
           </li>
           <li>
             <Link href="/">Orders +</Link>
@@ -32,6 +40,9 @@ const NavBar = () => {
                 <Link href="/orders/add">Add Order</Link>
               </li>
             </ul>
+          </li>
+          <li>
+            <Link href="/tracking/add">Tracking</Link>
           </li>
         </ul>
       </nav>

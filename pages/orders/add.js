@@ -17,7 +17,7 @@ const Orders = () => {
     return(
         <>
             <div className={styles.container}>
-                <h1 className={styles.form_title}>Create a new order</h1>
+                <h1 className={styles.form_title}>Create a New Order</h1>
                 <form action="#" onSubmit={handleSubmit(save)}>
                     <div className={styles.main_user_info}>
                         <div className={styles.user_input_box}>
